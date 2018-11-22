@@ -2,8 +2,8 @@ version: 1.2
 
 phases:
   install:
-	commands:
-		- apt install maven 
+    commands:
+      - apt install maven 
   build:
     commands:
       - echo Build started on `date`
@@ -12,6 +12,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn package
-artifacts:
-  files:
-    - target/finalcalci-1.2-SNAPSHOT.war
+
