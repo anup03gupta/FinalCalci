@@ -13,3 +13,4 @@ phases:
 artifacts:
   files:
     - target/Calculator_dev.war
+    - appspec.xml
