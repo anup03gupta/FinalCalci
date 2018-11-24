@@ -12,4 +12,4 @@ phases:
       
 artifacts:
   files:
-    - target/Calculator_dev.war.war
+    - target/Calculator_dev.war
