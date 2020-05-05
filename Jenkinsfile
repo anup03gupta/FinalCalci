@@ -4,7 +4,7 @@ node {
 
 }
    stage('Build') {
-    bat label: '', script: 'mvn -f C:\\dev\\code\\5-5-20\\ejm\\EJMWebMVC install -Dmaven.test.skip=true'
+    bat label: '', script: 'mvn install -Dmaven.test.skip=true'
 	   
 }
  stage('Deploy'){
