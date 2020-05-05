@@ -4,9 +4,7 @@ node {
 
 }
    stage('Build') {
-      def mvn_version = 'maven'
-      withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-      bat label: '', script: 'mvn install -Dmaven.test.skip=true'
+       bat label: '', script: 'mvn install -Dmaven.test.skip=true'
 }
     
 	   
