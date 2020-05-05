@@ -6,9 +6,6 @@ node {
    stage('Build') {
        bat label: '', script: 'mvn install -Dmaven.test.skip=true'
 }
-    
-	   
-}
  stage('Deploy'){
 input message: 'Proceed or Abort', submitter: 'Anup'
 
