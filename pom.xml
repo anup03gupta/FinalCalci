@@ -22,10 +22,6 @@
     <version>3.0-alpha-1</version>
     <scope>provided</scope>
 </dependency>
-    
- 
-    
-    
   </dependencies>
   <build>
     <plugins>
@@ -41,9 +37,7 @@
   <username>admin</username>  
   <password>password</password>   
  </configuration>   
-</plugin>
-       <plugin>
-    
+</plugin> 
  </plugins>
     <finalName>Calculator_dev</finalName>
   </build>
