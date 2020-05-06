@@ -4,7 +4,9 @@ node {
 
 }
    stage('Build') {
-       sh 'mvn install -Dmaven.test.skip=true'
+   def mvn_version = 'maven'
+    withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+    sh 'mvn install -Dmaven.test.skip=true'
 }
  stage('Deploy'){
 input message: 'Proceed or Abort', submitter: 'Anup'
