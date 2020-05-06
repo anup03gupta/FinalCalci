@@ -11,7 +11,7 @@ node {
 }
  stage('Deploy'){
 input message: 'Proceed or Abort', submitter: 'Anup'
-sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/DEMO/target/Calculator_dev.war root@18.218.55.211:/opt/tomcat/apache-tomcat-8.5.54/webapps//DEV_CALCULATOR.war'
+sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/DEMO/target/Calculator_dev.war root@18.218.55.211:/opt/tomcat/apache-tomcat-8.5.54/webapps/DEV_CALCULATOR.war'
 
 }
  
