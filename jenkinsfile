@@ -1,5 +1,5 @@
-node {
-   stage('SCM Checkout') {
+  stage('SCM Checkout')
+  node ('master'){
   git 'https://github.com/anup03gupta/FinalCalci.git'
 
 }
@@ -7,13 +7,11 @@ node {
    def mvn_version = 'MAVEN'
     withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
     sh 'mvn install -Dmaven.test.skip=true'
+    stash name: "master", includes: "/var/lib/jenkins/workspace/DEMO/target/Calculator_dev.war"
 }
 }
- stage('Deploy'){
- stash name: "master", includes: "/var/lib/jenkins/workspace/DEMO/target/Calculator_dev.war"
-}
+ stage('Deploy')
  node('jenkins-slave') {
  input message: 'Proceed or Abort', submitter: 'Anup'
        unstash "master"
-}
 }
