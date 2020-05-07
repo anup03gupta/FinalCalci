@@ -1,5 +1,4 @@
-node {
-   stage('SCM Checkout') {
+  stage('SCM Checkout') {
   git 'https://github.com/anup03gupta/FinalCalci.git'
 
 }
@@ -9,4 +8,3 @@ node {
     sh 'mvn install -Dmaven.test.skip=true'
 }
 } 
-}
