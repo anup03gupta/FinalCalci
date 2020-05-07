@@ -1,5 +1,5 @@
   stage('SCM Checkout')
-  node ('master'){
+  {
   git 'https://github.com/anup03gupta/FinalCalci.git'
 
 }
