@@ -7,6 +7,12 @@
    def mvn_version = 'MAVEN'
     withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
     sh 'mvn install -Dmaven.test.skip=true'
+    stash name: "master", includes: "/var/lib/jenkins/workspace/DEMO/target/Calculator_dev.war"
 }
 } 
+}
+node('jenkins-slave') {
+ input message: 'Proceed or Abort', submitter: 'Anup'
+       unstash "master"
+}
 }
