@@ -4,7 +4,7 @@ node('master'){
   stage('SCM Checkout') {
     git 'https://github.com/anup03gupta/FinalCalci.git'
     dir('/var/lib/jenkins/workspace/DEMO'){
-    stash name: "code", includes: "*/*"
+    stash name: "code", includes: "*"
 		}
 		}
 	   stage('Build') {
