@@ -14,7 +14,7 @@
 }
 }
 node('jenkins-slave') {
- stage('Deploy to Dev'){
+ stage('Deploy'){
  input message: 'Proceed or Abort', submitter: 'Anup'
        unstash "war"
         sh 'cp /opt/slave-workspace/workspace/DEMO/Calculator_dev.war /opt/tomcat/apache-tomcat-8.5.54/webapps/DEV_CALCULATOR.war'
