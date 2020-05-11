@@ -28,3 +28,12 @@ node('jenkins-slave2') {
         sh 'cp /opt/slave-workspace/workspace/DEMO/$ARTIFECT.war /opt/tomcat/apache-tomcat-8.5.54/webapps/$ARTIFACT_DEPLOY.war'
         }
  }
+ node('master'){
+     stage('Build') {
+		def mvn_version = 'MAVEN'
+		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+		sh 'mvn verify sonar:sonar'
+   
+		} 
+	}
+}
