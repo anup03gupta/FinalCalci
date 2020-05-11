@@ -10,7 +10,7 @@ node('master'){
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 		sh 'mvn install -Dmaven.test.skip=true'
     dir('/var/lib/jenkins/workspace/DEMO/target/'){
-    stash name: "war", includes: "$ARTIFECT.war"
+    stash name: "war", includes: "*.war"
 			}
 		} 
 	}
