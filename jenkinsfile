@@ -2,7 +2,6 @@ env.ARTIFECT='Calculator_dev'
 env.ARTIFACT_DEPLOY='DEV_CALCULATOR'
 node('master'){
   stage('SCM Checkout') {
-  deleteDir()
     git 'https://github.com/anup03gupta/FinalCalci.git'
 		}
 		
