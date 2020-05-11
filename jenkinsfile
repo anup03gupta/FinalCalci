@@ -17,7 +17,7 @@ node('master'){
 	}
 }
 node('jenkins-slave') {
-	stage('Deploy'){
+	stage('Deploy Dev'){
        unstash "war"
         sh 'cp /opt/slave-workspace/workspace/DEMO/$ARTIFECT.war /opt/tomcat/apache-tomcat-8.5.54/webapps/$ARTIFACT_DEPLOY.war'
 		}
