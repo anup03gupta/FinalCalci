@@ -29,7 +29,7 @@ node('jenkins-slave2') {
         }
  }
  node('master'){
-     stage('Build') {
+     stage('Static Code Analysis') {
 		def mvn_version = 'MAVEN'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 		sh 'mvn verify sonar:sonar'
