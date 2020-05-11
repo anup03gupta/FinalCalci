@@ -23,6 +23,12 @@
     <scope>provided</scope>
 </dependency>
   </dependencies>
+  <properties>
+  <sonar.projectKey>anup03gupta_FinalCalci</sonar.projectKey>
+  <sonar.organization>anup03gupta-github</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.login>ca109d10d07e988ad2da1c3f279f89e2cee79b48</sonar.login>
+</properties>
   <build>
     <plugins>
         <plugin> 
