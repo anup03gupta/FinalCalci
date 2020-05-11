@@ -2,6 +2,7 @@ env.ARTIFECT='Calculator_dev'
 env.ARTIFACT_DEPLOY='DEV_CALCULATOR'
 node('master'){
   stage('SCM Checkout') {
+    cleanWs()
     git 'https://github.com/anup03gupta/FinalCalci.git'
     dir('/var/lib/jenkins/workspace/DEMO'){
     stash name: "code", includes: "*"
