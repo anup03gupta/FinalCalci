@@ -15,13 +15,12 @@
 }
 node('jenkins-slave') {
  stage('Deploy'){
- #input message: 'Proceed or Abort', submitter: 'Anup'
        unstash "war"
         sh 'cp /opt/slave-workspace/workspace/DEMO/Calculator_dev.war /opt/tomcat/apache-tomcat-8.5.54/webapps/DEV_CALCULATOR.war'
 }
 }
 node('jenkins-slave2') {
- stage('Deploy'){
+ stage('Deploy Stage'){
  input message: 'Proceed or Abort', submitter: 'Anup'
        unstash "war"
         sh 'cp /opt/slave-workspace/workspace/DEMO/Calculator_dev.war /opt/tomcat/apache-tomcat-8.5.54/webapps/DEV_CALCULATOR.war'
