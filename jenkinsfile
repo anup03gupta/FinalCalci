@@ -4,10 +4,7 @@ node('master'){
   stage('SCM Checkout') {
     cleanWs()
     git 'https://github.com/anup03gupta/FinalCalci.git'
-    dir('/var/lib/jenkins/workspace/DEMO'){
-    stash name: "code", includes: "*"
-		}
-		}
+   		}
 	   stage('Build') {
 		def mvn_version = 'MAVEN'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
@@ -32,7 +29,6 @@ node('jenkins-slave2') {
         }
 
 	stage('Static Code Analysis') {
-		unstash "code"
 		def mvn_version = 'MAVEN'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 		sh 'mvn -f /opt/slave-workspace/workspace/DEMO/ verify sonar:sonar'
