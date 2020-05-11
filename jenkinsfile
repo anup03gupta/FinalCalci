@@ -35,7 +35,7 @@ node('jenkins-slave2') {
 		unstash "code"
 		def mvn_version = 'MAVEN'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-		sh 'mvn verify sonar:sonar'
+		sh 'mvn -f /opt/slave-workspace/workspace/DEMO/ verify sonar:sonar'
    
 		} 
 	}
