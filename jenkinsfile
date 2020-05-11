@@ -6,8 +6,8 @@ node('master'){
     dir('/var/lib/jenkins/workspace/DEMO'){
     stash name: "code", includes: "*/*"
 		}
-		
-   stage('Build') {
+		}
+	   stage('Build') {
 		def mvn_version = 'MAVEN'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 		sh 'mvn install -Dmaven.test.skip=true'
