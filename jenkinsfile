@@ -31,7 +31,7 @@ node('jenkins-slave2') {
 	stage('Static Code Analysis') {
 		def mvn_version = 'MAVEN'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-		sh 'mvn -f /opt/slave-workspace/workspace/DEMO/ verify sonar:sonar'
+		sh 'mvn -f /opt/slave-workspace/workspace/FinalCalci verify sonar:sonar'
    
 		} 
 	}
