@@ -3,6 +3,8 @@ env.ARTIFACT_DEPLOY='DEV_CALCULATOR'
 node('master'){
   stage('SCM Checkout') {
     git 'https://github.com/anup03gupta/FinalCalci.git'
+    dir('/var/lib/jenkins/workspace/DEMO'){
+    stash name: "code", includes: "*/*"
 		}
 		
    stage('Build') {
@@ -27,9 +29,9 @@ node('jenkins-slave2') {
        unstash "war"
         sh 'cp /opt/slave-workspace/workspace/DEMO/$ARTIFECT.war /opt/tomcat/apache-tomcat-8.5.54/webapps/$ARTIFACT_DEPLOY.war'
         }
- }
- node('master'){
-     stage('Static Code Analysis') {
+
+	stage('Static Code Analysis') {
+		unstash "code"
 		def mvn_version = 'MAVEN'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 		sh 'mvn verify sonar:sonar'
