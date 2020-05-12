@@ -22,7 +22,7 @@ node('jenkins-slave') {
 		}
 }
 node('jenkins-slave2') {
-	stage('Deploy Stage'){
+	stage('Deploy Stage Test'){
 	input message: 'Proceed or Abort', submitter: 'Anup'
        unstash "war"
         sh 'cp /opt/slave-workspace/workspace/DEMO/$ARTIFECT.war /opt/tomcat/apache-tomcat-8.5.54/webapps/$ARTIFACT_DEPLOY.war'
